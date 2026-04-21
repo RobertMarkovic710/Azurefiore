@@ -1,0 +1,68 @@
+.hero {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #002f5d80; /*#002E5D;*/
+    background-image: url("../../assets/cat1.png");
+    background-repeat: repeat;
+    background-size: 36px 36px;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 30px;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.main-title-1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.main-title-2 {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.card-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 180px;
+    max-width: 200px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card a {
+    text-decoration: none;
+    color: #000;
+}
+
+.card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    transform: translateY(10px);
+}

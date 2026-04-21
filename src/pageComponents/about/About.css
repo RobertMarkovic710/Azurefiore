@@ -1,0 +1,130 @@
+.about {
+    padding: 80px 20px;
+    background: #ffffff;
+    color: #333;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-images,
+.about-image {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-images img,
+.about-image img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.about-text,
+.about-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-text h2,
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.about-content h3 {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: #007BFF;
+}
+
+.about-content p,
+.about-text p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.about-intro {
+    font-weight: 500;
+    color: #333;
+}
+
+.about-list {
+    padding-left: 20px;
+    color: #555;
+}
+
+.about-list li {
+    margin-bottom: 6px;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.slider img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    font-size: 28px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.slider-btn:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+.slider-btn.left {
+    left: 10px;
+}
+
+.slider-btn.right {
+    right: 10px;
+}
+
+.text-slider {
+    position: relative;
+}
+
+.text-slider p {
+    display: none;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1s;
+}
+
+.text-slider p.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}

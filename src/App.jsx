@@ -1,9 +1,9 @@
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Gallery from "./components/Gallery";
-import Contact from "./components/Contact";
-import ScrollToTop from "./components/ScrollToTop";
-import "./style.css";
+import "./App.css";
+import Hero from "./pageComponents/hero/Hero";
+import About from "./pageComponents/about/About";
+import Gallery from "./pageComponents/gallery/Gallery";
+import Contact from "./pageComponents/contact/Contact";
+import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 
 function App() {
   return (

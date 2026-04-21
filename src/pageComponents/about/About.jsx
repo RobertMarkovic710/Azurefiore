@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import aria_cat from "../assets/aria.jpeg";
+import "./About.css"
 
-import s1 from "../assets/slider/aria1.png";
-import s2 from "../assets/slider/aria2.png";
-import s3 from "../assets/slider/aria3.png";
-import s4 from "../assets/slider/aria4.png";
+
+import aria_cat from "../../assets/aria.jpeg";
+import s1 from "../../assets/slider/aria1.png";
+import s2 from "../../assets/slider/aria2.png";
+import s3 from "../../assets/slider/aria3.png";
+import s4 from "../../assets/slider/aria4.png";
 
 export default function About() {
 
@@ -23,7 +25,6 @@ export default function About() {
     <section className="about" id="about">
       <div className="about-container">
 
-        {/* LEFT - SLIDER */}
         <div className="about-image">
           <div className="slider">
             <img src={images[current]} alt="Ragdoll mačka" />
@@ -38,7 +39,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* RIGHT - TEXT */}
         <div className="about-content">
           <h2>Azurefiore Ragdoll uzgajivačnica</h2>
 
