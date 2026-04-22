@@ -11,7 +11,7 @@ export default function Hero() {
       <section className="hero" id="home">
         <Navbar />
         <div className="main">
-          <h2 className="main-title-1">Bok, mi smo Azurefiore.</h2>
+          <h2 className="main-title-1">Mi smo Azurefiore.</h2>
           <h3 className="main-title-2">
             Uzgajivačnica Ragdoll mačaka iz srca Slavonije
           </h3>
@@ -32,7 +32,7 @@ export default function Hero() {
             </div>
 
             <div className="card">
-              <a href="https://www.facebook.com/" target="_blank">
+              <a href="https://www.facebook.com/profile.php?id=61560536721870" target="_blank">
                 <img src={facebook} />
                 <p>Posjetite nas na Facebook profilu</p>
               </a>

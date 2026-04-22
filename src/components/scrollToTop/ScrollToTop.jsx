@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaChevronUp } from "react-icons/fa";
+
 import "./ScrollToTop.css"
 
 export default function ScrollToTop() {

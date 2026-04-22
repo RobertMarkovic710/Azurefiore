@@ -11,6 +11,11 @@ html, body {
     margin: 0;
 }
 
+@font-face {
+    font-family: "Gelasio";
+    src: url("./assets/fonts/Gelasio/Gelasio-VariableFont_wght.ttf");
+}
+
 @media (max-width: 1024px) {
 
     .main-title-1 { font-size: 3rem; }
