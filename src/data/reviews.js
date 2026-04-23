@@ -2,6 +2,7 @@ import balto_img from "../assets/reviews/balto.jpeg"
 import tori_img from "../assets/reviews/tori.jpeg"
 import betty_img from "../assets/reviews/betty.jpeg"
 import aria_img from "../assets/reviews/aria.jpeg"
+import edgar_img from "../assets/reviews/edgar.jpeg";
 
 import demo_img from "../assets/reviews/demo.jpg"
 
@@ -30,8 +31,15 @@ export const reviews = [
     {
         name: "Aria",
         image: aria_img,
-        text: "Uskoro...",
+        text: "Imam odlično iskustvo s uzgajivačnicom puno su mi pomogli sa savjetima što mi je sve potrebno za macu, koju hranu mi je najboje koristiti itd. Jako su ljubazni i uvijek im se mogu javiti ako me nešto zanima ili imam neki problem. Maca je predivna, mazna, jako je vezana za mene i prati me u stopu. Naučena je od malena na šetnju s povodcem, dočekuje me uvijek na vratima i nekad mi se čini da je napola pas. Svakako posebna pasmina, prelijepa i izgledom i karakterom. Svakome bih preporučila uzgajivačnicu, jer su im mace zdrave i sretne i vidi se da ovo rade iz čiste ljubavi.",
         owner: "Ivana",
         city: "Dubrovnik, Hrvatska"
+    },
+    {
+        name: "Edgar",
+        image: edgar_img, 
+        text: "Izrazito pozitivno iskustvo tijekom cijelog procesa udomljavanja. Mogli smo od samog početka pratiti razvoj mačića koji je odgajan s puno ljubavi i pažnje. Kad smo ga preuzeli, u dom smo doveli mačka koji je bio izrazito mazan, zaigran i naviknut na suživot s ljudima. Mačak je stvarno poseban, nježan i pun ljubavi. Za svaku pohvalu!",
+        owner: "Marina",
+        city: "Šibenik, Hrvatska"
     },
 ];
