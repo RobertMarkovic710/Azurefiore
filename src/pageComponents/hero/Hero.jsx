@@ -1,8 +1,8 @@
 import "./Hero.css"
 import Navbar from "../../components/navbar/Navbar";
-import tiktok from "../../assets/tiktok.png";
-import instagram from "../../assets/instagram.png";
-import facebook from "../../assets/facebook.png";
+import tiktok from "../../assets/hero/tiktok.png";
+import instagram from "../../assets/hero/instagram.png";
+import facebook from "../../assets/hero/facebook.png";
 
 export default function Hero() {
   return (

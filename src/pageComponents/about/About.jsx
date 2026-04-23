@@ -1,6 +1,6 @@
 import "./About.css";
 
-export default function About() {
+export default function About() { 
   return (
     <section className="about" id="about">
       <div className="about-container">

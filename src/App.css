@@ -4,16 +4,22 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "GoogleSans";
+    src: url("./assets/fonts/Google_Sans/GoogleSans-VariableFont_GRAD,opsz,wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+}
+
 html, body {
-    font-family: "Raleway", sans-serif;
+    font-family: "GoogleSans", sans-serif;
     font-weight: 400;
     scroll-behavior: smooth;
     margin: 0;
 }
 
-@font-face {
-    font-family: "Gelasio";
-    src: url("./assets/fonts/Gelasio/Gelasio-VariableFont_wght.ttf");
+h1,h2,h3 {
+    font-weight: 600;
 }
 
 @media (max-width: 1024px) {

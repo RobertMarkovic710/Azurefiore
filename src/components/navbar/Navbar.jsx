@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./NavBar.css";
-
+ 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -17,7 +17,7 @@ export default function Navbar() {
       <ul className={`nav-links ${open ? "open" : ""}`}>
         <li><a href="#about" onClick={() => setOpen(false)}>Upoznajte nas</a></li>
         <li><a href="#gallery" onClick={() => setOpen(false)}>Galerija</a></li>
-        <li><a href="#review" onClick={() => setOpen(false)}>Iskustva</a></li>
+        <li><a href="#reviews" onClick={() => setOpen(false)}>Iskustva</a></li>
         <li><a href="#contact" onClick={() => setOpen(false)}>Kontakt</a></li>
       </ul>
 

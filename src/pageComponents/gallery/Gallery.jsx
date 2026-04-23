@@ -1,27 +1,51 @@
-import React, { useState } from "react";
-import "./Gallery.css"
-
-import g1 from "../../assets/gallery/g1.jpeg";
-import g2 from "../../assets/gallery/g2.jpeg";
-import g3 from "../../assets/gallery/g3.jpeg";
-import g4 from "../../assets/gallery/g4.jpeg";
-import g5 from "../../assets/gallery/g5.jpeg";
-import g6 from "../../assets/gallery/g6.jpeg";
+import { useState } from "react";
+import "./Gallery.css";
 
 export default function Gallery() {
-  const images = [g1, g2, g3, g4, g5, g6];
+
+  const litter = Object.values(
+    import.meta.glob("../../assets/gallery/litter/*.jpeg", { eager: true })
+  ).map((img) => img.default);
+
+  const cats = Object.values(
+    import.meta.glob("../../assets/gallery/azurefiore_cats/*.jpg", { eager: true })
+  ).map((img) => img.default);
+
   const [selected, setSelected] = useState(null);
 
   return (
     <section className="gallery" id="gallery">
-      <h2>Galerija naših Ragdolla</h2>
 
-      <div className="gallery-grid">
-        {images.map((img, index) => (
-          <div key={index} className="gallery-item">
-            <img src={img} alt="Ragdoll mačka" onClick={() => setSelected(img)} />
-          </div>
-        ))}
+      <h2>
+        Galerija naših Ragdolla
+      </h2>
+
+      <h3 className="gallery-subtitle">
+        Naši mačići
+      </h3>
+
+      <div className="gallery-slider-1">
+        <div className="gallery-track-1">
+          {[...litter, ...litter, ...litter].map((img, index) => (
+            <div className="gallery-item" key={index}>
+              <img src={img} alt="Naši Ragdoll mačići" onClick={() => setSelected(img)} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <h3 className="gallery-subtitle">
+        Roditelji - Greg, Gloria i Quinn Juliet
+      </h3>
+
+      <div className="gallery-slider-2">
+        <div className="gallery-track-2">
+          {[...cats, ...cats, ...cats].map((img, index) => (
+            <div className="gallery-item" key={index}>
+              <img src={img} alt="Naši Ragdoll mačići" onClick={() => setSelected(img)} />
+            </div>
+          ))}
+        </div>
       </div>
 
       {selected && (
