@@ -29,7 +29,7 @@ export const reviews = [
         city: "Karlovac, Hrvatska"
     },
     {
-        name: "Aria",
+        name: "Bella",
         image: aria_img,
         text: "Imam odlično iskustvo s uzgajivačnicom puno su mi pomogli sa savjetima što mi je sve potrebno za macu, koju hranu mi je najboje koristiti itd. Jako su ljubazni i uvijek im se mogu javiti ako me nešto zanima ili imam neki problem. Maca je predivna, mazna, jako je vezana za mene i prati me u stopu. Naučena je od malena na šetnju s povodcem, dočekuje me uvijek na vratima i nekad mi se čini da je napola pas. Svakako posebna pasmina, prelijepa i izgledom i karakterom. Svakome bih preporučila uzgajivačnicu, jer su im mace zdrave i sretne i vidi se da ovo rade iz čiste ljubavi.",
         owner: "Ivana",
