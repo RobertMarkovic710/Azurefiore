@@ -76,10 +76,11 @@
     height: 250px;
     object-fit: cover;
     transition: transform 0.4s ease;
+    transform: scale(1.06);
 }
 
 .gallery-item:hover img {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 @keyframes scroll {
