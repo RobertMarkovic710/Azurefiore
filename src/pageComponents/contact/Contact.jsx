@@ -35,6 +35,7 @@ export default function Contact() {
 
           <input type="text" placeholder="Ime i prezime" required />
           <input type="text" placeholder="Mjesto" required />
+          <input type="tel" placeholder="Telefon (nije obavezno)" pattern="^\+?[0-9\s]{8,15}$"  required />
           <input type="email" placeholder="E-mail" required />
 
           <textarea placeholder="Poruka" required></textarea>
