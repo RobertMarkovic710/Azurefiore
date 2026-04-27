@@ -7,12 +7,12 @@ export default function Contact() {
       <div className="contact-info">
         <h2>Kontaktirajte nas</h2>
 
-        <p><strong>Email:</strong> info@azurefiore.com</p>
         <p>
           <strong>Kontakt:</strong>{" "}
           <a href="tel:+385998340348" className="phone-link">
-            +385 99 8340 348 (Hana)
-          </a>
+            +385 99 8340 348
+          </a>{" "}
+          (Hana) · Viber / WhatsApp
         </p>
 
         <p className="contact-desc">
@@ -35,7 +35,7 @@ export default function Contact() {
 
           <input type="text" placeholder="Ime i prezime" required />
           <input type="text" placeholder="Mjesto" required />
-          <input type="tel" placeholder="Telefon (nije obavezno)" pattern="^\+?[0-9\s]{8,15}$"  required />
+          <input type="tel" placeholder="Telefon (nije obavezno)" pattern="^\+?[0-9\s]{8,15}$" required />
           <input type="email" placeholder="E-mail" required />
 
           <textarea placeholder="Poruka" required></textarea>

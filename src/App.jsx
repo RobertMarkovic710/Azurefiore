@@ -11,9 +11,9 @@ function App() {
   return (
     <>
       <Hero />
-      <About />
-      <Gallery />
       <Reviews />
+      <Gallery />
+      <About />
       <Contact />
       <Footer />
       <ScrollToTop />

@@ -69,6 +69,11 @@
     font-weight: 600;
 }
 
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.829);
+}
+
 .contact-form input,
 .contact-form textarea {
     padding: 14px 16px;

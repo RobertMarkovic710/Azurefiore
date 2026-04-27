@@ -9,34 +9,35 @@ export default function About() {
           <h2>O nama</h2>
 
           <p>
-            Azurefiore je mala uzgajivačnica Ragdoll mačaka u
-            Hrvatskoj, registrirana pri World Cat Federation (WCF). Nalazimo se
-            u Osijeku i posvećeni smo odgovornom i kvalitetnom uzgoju
+            Azurefiore je World Cat Federation (WCF) uzgajivačnica Ragdoll mačaka u
+            Hrvatskoj. Nalazimo se na dvije lokacije, u Lipiku i u Osijeku, i baš smo zato uzgajivačnica 
+            iz srca Slavonije.
+          </p>
+
+          <p>
+             Posvećeni smo odgovornom i kvalitetnom uzgoju
             čistokrvnih Ragdoll mačića.
           </p>
 
           <p>
-            Naziv Azurefiore dolazi iz talijanskog jezika – riječ „azure” simbolizira
-            prepoznatljive plave oči Ragdoll mačaka, dok „fiore” evocira prirodnu
-            ljepotu i mediteranski ugođaj. Inspiraciju smo pronašli u porijeklu
-            naših mačaka koje dolaze iz talijanske uzgajivačnice.
+            Svi naši mačići posjeduju rodovnik.
           </p>
 
           <p>
             Naša priča temelji se na ljubavi prema Ragdoll pasmini i želji da
-            uzgajamo zdrave, socijalizirane i stabilne mačke koje će biti idealni
-            obiteljski ljubimci.
+            uzgajamo zdrave i socijalizirane mačke koje će biti idealni
+            obiteljski ljubimci. Naše mačke ali mačići kada ih imamo, žive i borave
+            svaki dan s nama. Mi nismo odvojili naše mačke u zasebnu prostoriju.
           </p>
 
           <p>
             Danas naša uzgajivačnica u Hrvatskoj broji tri odrasle mačke, uključujući
-            ženku i mužjaka u rijetkoj lilac boji. Takva kombinacija značajno povećava
-            mogućnost da i Ragdoll mačići naslijede lilac boju, koja je uz blue mitted boju među najrjeđima
-            kod ove pasmine.
+            dvije ženke i jednog mužjaka. Jedna naša ženka je Bicolor, a mužjak i druga ženka su čisti lilac. Naša
+            legla imaju blue mitted ali i lilac boje mačića.
           </p>
 
           <p>
-            Također roditelji mačića su testirani i posjeduju negativan test na genetske bolesti.
+            Naši roditelji mačića su testirani i posjeduju negativan test na genetske bolesti.
           </p>
         </div>
 

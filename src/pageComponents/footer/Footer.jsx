@@ -1,6 +1,9 @@
 import "./Footer.css";
 
 export default function Footer() {
+
+    const year = new Date().getFullYear();
+
     return (
         <footer className="footer">
 
@@ -23,7 +26,12 @@ export default function Footer() {
             </div>
 
             <div className="footer-bottom">
-                <p>Web stranicu izradio i održava - univ.mag.ing.comp. Robert Marković</p>
+                <p>
+                    © 2024 - {year} Azurefiore. Sva prava pridržana.
+                </p>
+                <p>
+                    Web stranicu izradio i održava - univ.mag.ing.comp. Robert Marković
+                </p>
             </div>
 
         </footer>
