@@ -1,6 +1,7 @@
 import "./About.css";
+import { PiPawPrintFill } from "react-icons/pi";
 
-export default function About() { 
+export default function About() {
   return (
     <section className="about" id="about">
       <div className="about-container">
@@ -8,45 +9,45 @@ export default function About() {
         <div className="about-column">
           <h2>O nama</h2>
 
-          <p>
-            Azurefiore je World Cat Federation (WCF) uzgajivačnica Ragdoll mačaka u
-            Hrvatskoj. Nalazimo se na dvije lokacije, u Lipiku i u Osijeku, i baš smo zato uzgajivačnica 
-            iz srca Slavonije.
+          <p className="highlight-box highlight-left">
+            Azurefiore je <span className="highlight-text">World Cat Federation (WCF) </span>
+            uzgajivačnica Ragdoll mačaka u Hrvatskoj.
           </p>
 
           <p>
-             Posvećeni smo odgovornom i kvalitetnom uzgoju
+            Posvećeni smo odgovornom i kvalitetnom uzgoju
             čistokrvnih Ragdoll mačića.
           </p>
 
-          <p>
+          <p className="highlight-box highlight-left">
+            Naš uzgoj se usredotočio na Blue i Lilac mačiće koji su ogojeni, uredni i naučeni na red.
             Svi naši mačići posjeduju rodovnik.
           </p>
 
           <p>
             Naša priča temelji se na ljubavi prema Ragdoll pasmini i želji da
             uzgajamo zdrave i socijalizirane mačke koje će biti idealni
-            obiteljski ljubimci. Naše mačke ali mačići kada ih imamo, žive i borave
-            svaki dan s nama. Mi nismo odvojili naše mačke u zasebnu prostoriju.
+            obiteljski ljubimci.
+            Naše mačke i mačići žive i borave svaki dan s nama.
           </p>
 
           <p>
-            Danas naša uzgajivačnica u Hrvatskoj broji tri odrasle mačke, uključujući
-            dvije ženke i jednog mužjaka. Jedna naša ženka je Bicolor, a mužjak i druga ženka su čisti lilac. Naša
-            legla imaju blue mitted ali i lilac boje mačića.
+            Danas naša uzgajivačnica u Hrvatskoj broji tri odrasle mačke,
+            dvije ženke i jednog mužjaka.
           </p>
 
-          <p>
-            Naši roditelji mačića su testirani i posjeduju negativan test na genetske bolesti.
+          <p className="highlight-box highlight-left">
+            Naši roditelji mačića su testirani i posjeduju negativan test na genetske bolesti HCM,
+            pd-PRA i PKD.
           </p>
         </div>
 
         <div className="about-column">
           <h2>Zašto Ragdoll?</h2>
 
-          <p>
-            Ragdoll mačke poznate su po svom izuzetno mirnom i privrženom karakteru, zbog čega su 
-            među najtraženijim pasminama mačaka. 
+          <p className="highlight-box highlight-middle">
+            Ragdoll mačke poznate su po svom izuzetno mirnom i privrženom karakteru, zbog čega su
+            među najtraženijim pasminama mačaka.
           </p>
 
           <p>
@@ -55,18 +56,17 @@ export default function About() {
           </p>
 
           <p>
-            Ragdoll mačka savršeno je prilagođena životu u stanu jer voli boraviti u zatvorenom prostoru 
-            i uživa u stalnom kontaktu s ljudima. Zbog svoje blage naravi i društvenosti, Ragdoll 
-            mačići brzo se povezuju s vlasnicima i postaju pravi članovi obitelji.
+            Ragdoll mačka savršeno je prilagođena životu u stanu jer voli boraviti u zatvorenom prostoru
+            i uživa u stalnom kontaktu s ljudima.
           </p>
 
           <p>
-            Njihova nježna i prijateljska osobnost čini ih idealnim izborom za obitelji s djecom, ali 
-            i za domove s drugim kućnim ljubimcima. Ako tražite umiljatu, odanu i prilagodljivu mačku, 
+            Njihova nježna i prijateljska osobnost čini ih idealnim izborom za obitelji s djecom, ali
+            i za domove s drugim kućnim ljubimcima. Ako tražite umiljatu, odanu i prilagodljivu mačku,
             Ragdoll je jedna od najboljih opcija.
           </p>
 
-          <p>
+          <p className="highlight-box highlight-middle" >
             Ako tražite Ragdoll mačiće u Osijeku ili Hrvatskoj, Azurefiore je
             uzgajivačnica koja spaja kvalitetu, iskustvo i ljubav prema životinjama.
           </p>
@@ -76,20 +76,19 @@ export default function About() {
           <h2>Naš uzgoj</h2>
 
           <p>
-            Svi naši Ragdoll mačići nakon petnaest tjedana dolaze potpuno spremni za novi dom, uz svu
+            Svi naši Ragdoll mačići nakon četrnaest tjedana dolaze potpuno spremni za novi dom, uz svu
             potrebnu dokumentaciju i zdravstvenu skrb.
           </p>
 
-          <ul>
-            <li>cijepljenje protiv zaraznih bolesti i virusa</li>
-            <li>mikročip</li>
-            <li>čišćenje od parazita</li>
-            <li>kastracija / sterilizacija</li>
-            <li>rodovnik koji potvrđuje čistokrvnost</li>
-            <li>EU putovnica</li>
-            <li>predugovor o rezervaciji</li>
-            <li>ugovor o udomljavanju</li>
-            <li>ugovor o prijepisu vlasništva</li>
+          <ul className="highlight-box highlight-right custom-list">
+            <li><PiPawPrintFill /> cijepljenje protiv zaraznih bolesti i virusa</li>
+            <li><PiPawPrintFill /> mikročip</li>
+            <li><PiPawPrintFill /> čišćenje od parazita</li>
+            <li><PiPawPrintFill /> kastracija / sterilizacija</li>
+            <li><PiPawPrintFill /> rodovnik koji potvrđuje čistokrvnost</li>
+            <li><PiPawPrintFill /> EU putovnica</li>
+            <li><PiPawPrintFill /> predugovor o rezervaciji</li>
+            <li><PiPawPrintFill /> ugovor o prijepisu vlasništva</li>
           </ul>
 
           <p>
@@ -99,7 +98,7 @@ export default function About() {
 
           <p>
             Naš cilj nije samo prodaja, već stvaranje dugoročnog odnosa i
-            povjerenja s budućim, pažljivo biranim, vlasnicima s kojima ostajemo obiteljski prijatelji.
+            povjerenja s budućim, pažljivo biranim, vlasnicima s kojima ostajemo u kontaktu i pružamo podršku.
           </p>
         </div>
 

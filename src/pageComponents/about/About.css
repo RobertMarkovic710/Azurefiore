@@ -29,6 +29,52 @@
     font-size: 0.95rem;
 }
 
+.custom-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.custom-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.custom-list li svg {
+    color: #934fcfae;
+}
+
+.highlight-box {
+    padding: 16px 18px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.highlight-box:hover {
+    transform: translateY(-4px);
+}
+
+.highlight-left {
+    background: #edf4ff;
+    border-left: 5px solid #2774ae;
+    color: #002e5d;
+}
+
+.highlight-middle {
+    background: #edf4ff;
+    border-left: 5px solid #2774ae;
+    color: #3f3a8a;
+}
+
+.highlight-right {
+    background: #edf4ff;
+    border-left: 5px solid #2774ae;
+    color: #004e64;
+}
+
 .about-column ul {
     padding-left: 18px;
     color: #555;
