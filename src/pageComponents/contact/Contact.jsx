@@ -1,6 +1,33 @@
 import "./Contact.css";
 
 export default function Contact() {
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = {
+      name: e.target[0].value,
+      place: e.target[1].value,
+      phone: e.target[2].value,
+      email: e.target[3].value,
+      message: e.target[4].value,
+    };
+
+    const res = await fetch("/api/sendEmail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (res.ok) {
+      alert("Poruka poslana!");
+    } else {
+      alert("Greška!");
+    }
+  };
+
   return (
     <section className="contact" id="contact">
 
@@ -30,7 +57,7 @@ export default function Contact() {
           ></iframe>
         </div>
 
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={handleSubmit}>
           <h2>Pošaljite nam svoj upit</h2>
 
           <input type="text" placeholder="Ime i prezime" required />
