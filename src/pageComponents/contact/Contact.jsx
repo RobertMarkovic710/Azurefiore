@@ -134,7 +134,7 @@ export default function Contact() {
 
           {status === "success" && (
             <p className="form-success">
-              Poruka je uspješno poslana! ✔️
+              Poruka je uspješno poslana!
             </p>
           )}
 

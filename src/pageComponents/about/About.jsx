@@ -20,7 +20,7 @@ export default function About() {
           </p>
 
           <p className="highlight-box highlight-left">
-            Naš uzgoj se usredotočio na Blue i Lilac mačiće koji su ogojeni, uredni i naučeni na red.
+            Naš uzgoj se usredotočio na Blue i Lilac mačiće koji su odgojeni, uredni i naučeni na red.
             Svi naši mačići posjeduju rodovnik.
           </p>
 
