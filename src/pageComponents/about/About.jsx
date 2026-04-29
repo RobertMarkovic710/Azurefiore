@@ -87,6 +87,7 @@ export default function About() {
             <li><PiPawPrintFill /> kastracija / sterilizacija</li>
             <li><PiPawPrintFill /> rodovnik koji potvrđuje čistokrvnost</li>
             <li><PiPawPrintFill /> EU putovnica</li>
+            <li><PiPawPrintFill /> Azurefiore STARTER paket</li>
             <li><PiPawPrintFill /> predugovor o rezervaciji</li>
             <li><PiPawPrintFill /> ugovor o prijepisu vlasništva</li>
           </ul>
@@ -98,7 +99,7 @@ export default function About() {
 
           <p>
             Naš cilj nije samo prodaja, već stvaranje dugoročnog odnosa i
-            povjerenja s budućim, pažljivo biranim, vlasnicima s kojima ostajemo u kontaktu i pružamo podršku.
+            povjerenja s budućim, pažljivo biranim vlasnicima s kojima ostajemo u kontaktu i pružamo podršku.
           </p>
         </div>
 
