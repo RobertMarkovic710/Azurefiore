@@ -1,30 +1,55 @@
+import { useState } from "react";
 import "./Contact.css";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    place: "",
+    phone: "",
+    email: "",
+    message: ""
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = {
-      name: e.target[0].value,
-      place: e.target[1].value,
-      phone: e.target[2].value,
-      email: e.target[3].value,
-      message: e.target[4].value,
-    };
+    setLoading(true);
+    setStatus("");
 
-    const res = await fetch("/api/sendEmail", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const res = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
 
-    if (res.ok) {
-      alert("Poruka poslana!");
-    } else {
-      alert("Greška!");
+      if (!res.ok) throw new Error();
+
+      setFormData({
+        name: "",
+        place: "",
+        phone: "",
+        email: "",
+        message: ""
+      });
+
+      setStatus("success");
+    } catch (err) {
+      setStatus("error");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -60,14 +85,64 @@ export default function Contact() {
         <form className="contact-form" onSubmit={handleSubmit}>
           <h2>Pošaljite nam svoj upit</h2>
 
-          <input type="text" placeholder="Ime i prezime" required />
-          <input type="text" placeholder="Mjesto" required />
-          <input type="tel" placeholder="Telefon (nije obavezno)" pattern="^\+?[0-9\s]{8,15}$" required />
-          <input type="email" placeholder="E-mail" required />
+          <input
+            type="text"
+            name="name"
+            placeholder="Ime i prezime"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
 
-          <textarea placeholder="Poruka" required></textarea>
+          <input
+            type="text"
+            name="place"
+            placeholder="Mjesto"
+            value={formData.place}
+            onChange={handleChange}
+            required
+          />
 
-          <button type="submit">Pošalji</button>
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Telefon (nije obavezno)"
+            value={formData.phone}
+            onChange={handleChange}
+          />
+
+          <input
+            type="email"
+            name="email"
+            placeholder="E-mail"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+
+          <textarea
+            name="message"
+            placeholder="Poruka"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          />
+
+          <button type="submit" disabled={loading}>
+            {loading ? "Šaljem..." : "Pošalji"}
+          </button>
+
+          {status === "success" && (
+            <p className="form-success">
+              Poruka je uspješno poslana! ✔️
+            </p>
+          )}
+
+          {status === "error" && (
+            <p className="form-error">
+              Došlo je do greške. Pokušajte ponovno.
+            </p>
+          )}
         </form>
 
       </div>
