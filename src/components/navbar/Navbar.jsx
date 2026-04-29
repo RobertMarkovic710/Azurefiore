@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./NavBar.css";
- 
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
