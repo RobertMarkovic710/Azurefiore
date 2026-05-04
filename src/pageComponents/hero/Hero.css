@@ -11,6 +11,7 @@
     flex-direction: column;
     color: rgb(244, 255, 247);
     gap: 30px;
+    padding-top: 80px;
 }
 
 .main {
@@ -141,6 +142,9 @@
         grid-template-columns: repeat(3, 90px);
         grid-auto-rows: 90px;
     }
+    .hero {
+        padding-top: 0;
+    }
 }
 
 @media (max-width: 600px) {
@@ -150,5 +154,9 @@
 
     .main-title-2 {
         font-size: 1.6rem;
+    }
+
+    .hero {
+        padding-top: 0;
     }
 }
