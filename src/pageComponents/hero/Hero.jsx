@@ -23,10 +23,10 @@ export default function Hero() {
           <div className="hero-center">
 
             <div className="hero-left">
-              <h2 className="main-title-1">Mi smo Azurefiore.</h2>
-              <h3 className="main-title-2">
+              <h1 className="main-title-1">Mi smo Azurefiore.</h1>
+              <h1 className="main-title-2">
                 Uzgajivačnica Ragdoll mačaka iz srca Slavonije
-              </h3>
+              </h1>
             </div>
 
             <div className="hero-right">

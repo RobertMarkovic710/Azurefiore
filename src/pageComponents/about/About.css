@@ -57,6 +57,11 @@
     transform: translateY(-4px);
 }
 
+.highlight-text {
+    color: #272727;
+    font-weight: 700;
+}
+
 .highlight-left {
     background: #edf4ff;
     border-left: 5px solid #2774ae;

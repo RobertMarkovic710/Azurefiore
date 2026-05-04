@@ -6,9 +6,10 @@
 
 @font-face {
     font-family: "GoogleSans";
-    src: url("./assets/fonts/Google_Sans/GoogleSans-VariableFont_GRAD,opsz,wght.ttf") format("truetype");
+    src: url("/fonts/Google_Sans/GoogleSans-VariableFont_GRAD,opsz,wght.ttf") format("truetype");
     font-weight: 100 900;
     font-style: normal;
+    font-display: swap;
 }
 
 html, body {

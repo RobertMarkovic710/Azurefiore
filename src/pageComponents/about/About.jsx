@@ -10,7 +10,7 @@ export default function About() {
           <h2>O nama</h2>
 
           <p className="highlight-box highlight-left">
-            Azurefiore je <span className="highlight-text">World Cat Federation (WCF) </span>
+            Ako tražite <span className="highlight-text">Ragdoll mačke</span> u Hrvatskoj, Azurefiore je <span className="highlight-text">World Cat Federation (WCF) </span>
             uzgajivačnica Ragdoll mačaka u Hrvatskoj.
           </p>
 
@@ -20,7 +20,7 @@ export default function About() {
           </p>
 
           <p className="highlight-box highlight-left">
-            Naš uzgoj se usredotočio na Blue i Lilac mačiće koji su odgojeni, uredni i naučeni na red.
+            Naš uzgoj se usredotočio na <span className="highlight-text">Blue i Lilac</span> mačiće koji su odgojeni, uredni i naučeni na red.
             Svi naši mačići posjeduju rodovnik.
           </p>
 
@@ -32,12 +32,12 @@ export default function About() {
           </p>
 
           <p>
-            Danas naša uzgajivačnica u Hrvatskoj broji tri odrasle mačke,
+            Danas naša <span className="highlight-text">uzgajivačnica u Hrvatskoj</span> broji tri odrasle mačke,
             dvije ženke i jednog mužjaka.
           </p>
 
           <p className="highlight-box highlight-left">
-            Naši roditelji mačića su testirani i posjeduju negativan test na genetske bolesti HCM,
+            Naši roditelji mačića su <span className="highlight-text">testirani i posjeduju negativan test na genetske bolesti</span> HCM,
             pd-PRA i PKD.
           </p>
         </div>
@@ -46,7 +46,7 @@ export default function About() {
           <h2>Zašto Ragdoll?</h2>
 
           <p className="highlight-box highlight-middle">
-            Ragdoll mačke poznate su po svom izuzetno mirnom i privrženom karakteru, zbog čega su
+            Ragdoll mačke poznate su po svom <span className="highlight-text">izuzetno mirnom i privrženom</span> karakteru, zbog čega su
             među najtraženijim pasminama mačaka.
           </p>
 
@@ -61,7 +61,7 @@ export default function About() {
           </p>
 
           <p>
-            Njihova nježna i prijateljska osobnost čini ih idealnim izborom za obitelji s djecom, ali
+            Njihova nježna i prijateljska osobnost čini ih <span className="highlight-text">idealnim</span> izborom za obitelji s djecom, ali
             i za domove s drugim kućnim ljubimcima. Ako tražite umiljatu, odanu i prilagodljivu mačku,
             Ragdoll je jedna od najboljih opcija.
           </p>
@@ -85,9 +85,9 @@ export default function About() {
             <li><PiPawPrintFill /> mikročip</li>
             <li><PiPawPrintFill /> čišćenje od parazita</li>
             <li><PiPawPrintFill /> kastracija / sterilizacija</li>
-            <li><PiPawPrintFill /> rodovnik koji potvrđuje čistokrvnost</li>
+            <li><PiPawPrintFill /> <span className="highlight-text">rodovnik koji potvrđuje čistokrvnost</span></li>
             <li><PiPawPrintFill /> EU putovnica</li>
-            <li><PiPawPrintFill /> Azurefiore STARTER paket</li>
+            <li><PiPawPrintFill /> <span className="highlight-text">Azurefiore STARTER paket</span></li>
             <li><PiPawPrintFill /> predugovor o rezervaciji</li>
             <li><PiPawPrintFill /> ugovor o prijepisu vlasništva</li>
           </ul>
