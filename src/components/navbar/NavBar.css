@@ -16,7 +16,11 @@
 
 .logo {
     font-size: 2rem;
+}
+
+.logo a {
     color: white;
+    text-decoration: none;
 }
 
 .nav-links {
@@ -70,15 +74,15 @@
 
 .cta a {
     padding: 8px 16px;
-    background-color: #098cf7;
+    background-color: #60b6fce1;
     color: white;
-    border-radius: 6px;
+    border-radius: 16px;
     text-decoration: none;
 }
 
 .cta a:hover {
     transform: translateY(-2px);
-    background-color: #4ba7f1;
+    background-color: #2870ac;
 }
 
 .hamburger {

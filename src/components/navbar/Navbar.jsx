@@ -6,7 +6,11 @@ export default function Navbar() {
 
   return (
     <nav className="nav">
-      <h1 className="logo">AZUREFIORE.</h1>
+      <h1 className="logo">
+        <a href="#home" onClick={() => setOpen(false)}>
+          AZUREFIORE.
+        </a>
+      </h1>
 
       <div className="hamburger" onClick={() => setOpen(!open)}>
         <span className={open ? "bar open" : "bar"}></span>
