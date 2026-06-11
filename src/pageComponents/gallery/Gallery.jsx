@@ -4,11 +4,11 @@ import "./Gallery.css";
 export default function Gallery() {
 
   const litter = Object.values(
-    import.meta.glob("../../assets/gallery/litter/*.jpeg", { eager: true })
+    import.meta.glob("../../assets/cats/azurefiore_cats/*.jpg", { eager: true })
   ).map((img) => img.default);
 
   const cats = Object.values(
-    import.meta.glob("../../assets/gallery/azurefiore_cats/*.jpg", { eager: true })
+    import.meta.glob("../../assets/cats/azurefiore_cats/*.jpg", { eager: true })
   ).map((img) => img.default);
 
   const [selected, setSelected] = useState(null);

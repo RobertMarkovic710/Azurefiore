@@ -1,51 +1,120 @@
 import "./Hero.css";
-import { useState } from "react";
-
-import Navbar from "../../components/navbar/Navbar";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import instagram from "../../assets/hero/instagram.png";
 import tiktok from "../../assets/hero/tiktok.png";
 import facebook from "../../assets/hero/facebook.png";
 
-import g1 from "../../assets/gallery/litter/g1.jpeg";
-import g2 from "../../assets/gallery/litter/g2.jpeg";
-import g3 from "../../assets/gallery/litter/g3.jpeg";
-import g4 from "../../assets/gallery/litter/g4.jpeg";
-
 export default function Hero() {
-  const images = [g1, g2, g3, g4];
+  const kittens = useMemo(() => {
+    const fullImages = Object.entries(
+      import.meta.glob("../../assets/cats/hero/*.{jpeg,jpg,png,webp}", {
+        eager: true,
+      })
+    ).sort(([pathA], [pathB]) =>
+      pathA.localeCompare(pathB, undefined, { numeric: true })
+    );
+
+    const thumbImages = Object.entries(
+      import.meta.glob("../../assets/cats/hero_thumbs/*.{jpeg,jpg,png,webp}", {
+        eager: true,
+      })
+    ).sort(([pathA], [pathB]) =>
+      pathA.localeCompare(pathB, undefined, { numeric: true })
+    );
+
+    const getFileBaseName = (path) => {
+      return path
+        .split("/")
+        .pop()
+        .replace(/\.(jpeg|jpg|png|webp)$/i, "");
+    };
+
+    const thumbsByName = new Map(
+      thumbImages.map(([thumbPath, thumbModule]) => [
+        getFileBaseName(thumbPath),
+        thumbModule.default,
+      ])
+    );
+
+    const pairedImages = fullImages.map(([fullPath, fullModule], index) => {
+      const baseName = getFileBaseName(fullPath);
+
+      return {
+        id: `${baseName}-${index}`,
+        image: thumbsByName.get(baseName) || fullModule.default,
+        fullImage: fullModule.default,
+      };
+    });
+
+    const shuffledImages = [...pairedImages];
+
+    for (let i = shuffledImages.length - 1; i > 0; i--) {
+      const randomIndex = Math.floor(Math.random() * (i + 1));
+
+      [shuffledImages[i], shuffledImages[randomIndex]] = [
+        shuffledImages[randomIndex],
+        shuffledImages[i],
+      ];
+    }
+
+    return shuffledImages.slice(0, 9);
+  }, []);
 
   const [selectedIndex, setSelectedIndex] = useState(null);
 
-  const nextImage = () => {
-    setSelectedIndex((prev) => (prev + 1) % images.length);
-  };
+  const nextImage = useCallback(() => {
+    setSelectedIndex((prev) => {
+      if (prev === null || kittens.length === 0) return null;
 
-  const prevImage = () => {
-    setSelectedIndex((prev) =>
-      prev === 0 ? images.length - 1 : prev - 1
-    );
-  };
+      return (prev + 1) % kittens.length;
+    });
+  }, [kittens.length]);
+
+  const prevImage = useCallback(() => {
+    setSelectedIndex((prev) => {
+      if (prev === null || kittens.length === 0) return null;
+
+      return prev === 0 ? kittens.length - 1 : prev - 1;
+    });
+  }, [kittens.length]);
+
+  useEffect(() => {
+    if (selectedIndex === null) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setSelectedIndex(null);
+      if (e.key === "ArrowRight") nextImage();
+      if (e.key === "ArrowLeft") prevImage();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedIndex, nextImage, prevImage]);
+
+  const selectedKitten =
+    selectedIndex !== null ? kittens[selectedIndex] : null;
 
   return (
     <section className="hero" id="home">
-      <Navbar />
-
-      <div className="noise"></div>
-      <div className="gradient-orb orb-1"></div>
-      <div className="gradient-orb orb-2"></div>
-      <div className="gradient-orb orb-3"></div>
+      <div className="hero-bg-pattern"></div>
+      <div className="hero-orb hero-orb-1"></div>
+      <div className="hero-orb hero-orb-2"></div>
+      <div className="hero-orb hero-orb-3"></div>
 
       <div className="hero-container">
-
         <div className="hero-content">
-
-          <div className="hero-topline">
-            ✦ NAŠI MAČIĆI DOLAZE S RODOVNIKOM SVJETSKE ORGANIZACIJE MAČAKA (WCF).
+          <div className="hero-eyebrow">
+            ✦ NAŠI MAČIĆI DOLAZE S RODOVNIKOM SVJETSKE ORGANIZACIJE MAČAKA (WCF)
           </div>
 
+          <h2 className="hero-reservation-title">
+            Primamo rezervacije za novo leglo!
+          </h2>
+
           <h1 className="hero-title">
-            Mi smo Azurefiore
+            Mi smo <span>Azurefiore</span>
           </h1>
 
           <h2 className="hero-subtitle">
@@ -53,33 +122,31 @@ export default function Hero() {
           </h2>
 
           <p className="hero-description">
-            Ekskluzivni Blue i Lilac Ragdoll mačići uzgojeni s fokusom na ljubav, zdravu prehranu i maženje.
+            Ekskluzivni Blue i Lilac Ragdoll mačići uzgojeni s fokusom na ljubav,
+            zdravu prehranu i maženje.
           </p>
 
-          <div className="hero-buttons">
-
-            <a href="#gallery" className="hero-btn hero-primary">
+          <div className="hero-actions">
+            <a href="#gallery" className="hero-btn hero-btn-primary">
               Pogledajte galeriju
             </a>
 
-            <a href="#contact" className="hero-btn hero-secondary">
+            <a href="#contact" className="hero-btn hero-btn-secondary">
               Kontaktirajte nas
             </a>
-
           </div>
 
-          <div className="social-bar">
-
+          <div className="hero-socials" aria-label="Društvene mreže">
             <a
               href="https://www.instagram.com/azurefiore_/"
               target="_blank"
               rel="noreferrer"
-              className="social-item"
+              className="hero-social"
             >
-              <img src={instagram} alt="Instagram" />
+              <img src={instagram} alt="" loading="lazy" decoding="async" />
               <div>
-                <span>Instagram</span>
-                <p>@azurefiore_</p>
+                <strong>Instagram</strong>
+                <span>@azurefiore_</span>
               </div>
             </a>
 
@@ -87,12 +154,12 @@ export default function Hero() {
               href="https://www.tiktok.com/@azurefiore"
               target="_blank"
               rel="noreferrer"
-              className="social-item"
+              className="hero-social"
             >
-              <img src={tiktok} alt="TikTok" />
+              <img src={tiktok} alt="" loading="lazy" decoding="async" />
               <div>
-                <span>TikTok</span>
-                <p>@azurefiore</p>
+                <strong>TikTok</strong>
+                <span>@azurefiore</span>
               </div>
             </a>
 
@@ -100,122 +167,95 @@ export default function Hero() {
               href="https://www.facebook.com/profile.php?id=61560536721870"
               target="_blank"
               rel="noreferrer"
-              className="social-item"
+              className="hero-social"
             >
-              <img src={facebook} alt="Facebook" />
+              <img src={facebook} alt="" loading="lazy" decoding="async" />
               <div>
-                <span>Facebook</span>
-                <p>Azurefiore</p>
+                <strong>Facebook</strong>
+                <span>Azurefiore</span>
               </div>
             </a>
-
           </div>
-
         </div>
 
-        <div className="hero-visual">
+        {kittens.length > 0 && (
+          <div className="hero-gallery-wrapper">
 
-          <div className="fan-gallery">
-
-            <div className="fan-card card-1">
-              <img
-                src={g1}
-                alt="Ragdoll mačić"
-                onClick={() => setSelectedIndex(0)}
-              />
-              <div className="fan-card-info">
-                <h3>Celeste</h3>
-                <p>Leglo C</p>
-              </div>
+            <div className="hero-gallery">
+              {kittens.map((kitten, index) => (
+                <button
+                  key={kitten.id}
+                  className={`kitten-card kitten-card-${index + 1}`}
+                  onClick={() => setSelectedIndex(index)}
+                  aria-label="Otvori veću sliku mačića"
+                >
+                  <img
+                    src={kitten.image}
+                    alt="Ragdoll mačić"
+                    loading={index === 0 ? "eager" : "lazy"}
+                    decoding={index === 0 ? "auto" : "async"}
+                    fetchPriority={index === 0 ? "high" : "low"}
+                  />
+                </button>
+              ))}
             </div>
 
-            <div className="fan-card card-2">
-              <img
-                src={g2}
-                alt="Ragdoll mačić"
-                onClick={() => setSelectedIndex(0)}
-              />
-              <div className="fan-card-info">
-                <h3>Callie</h3>
-                <p>Leglo C</p>
-              </div>
+            <div className="hero-gallery-note">
+              Klikni na fotku za veći prikaz
             </div>
-
-            <div className="fan-card card-3">
-              <img
-                src={g3}
-                alt="Ragdoll mačić"
-                onClick={() => setSelectedIndex(0)}
-              />
-              <div className="fan-card-info">
-                <h3>Callie</h3>
-                <p>Leglo C</p>
-              </div>
-            </div>
-
-            <div className="fan-card card-4">
-              <img
-                src={g4}
-                alt="Ragdoll mačić"
-                onClick={() => setSelectedIndex(0)}
-              />
-              <div className="fan-card-info">
-                <h3>Cosmo</h3>
-                <p>Leglo C</p>
-              </div>
-            </div>
-
-            <div className="fan-card card-5">
-              <img
-                src={g4}
-                alt="Ragdoll mačić"
-                onClick={() => setSelectedIndex(0)}
-              />
-              <div className="fan-card-info">
-                <h3>Cairo</h3>
-                <p>Leglo C</p>
-              </div>
-            </div>
-
           </div>
-
-        </div>
-
+        )}
       </div>
 
-      {selectedIndex !== null && (
+      {selectedKitten && (
         <div
           className="image-modal"
           onClick={() => setSelectedIndex(null)}
+          role="dialog"
+          aria-modal="true"
         >
+          <button
+            className="modal-close"
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedIndex(null);
+            }}
+            aria-label="Zatvori galeriju"
+          >
+            ×
+          </button>
 
           <button
-            className="modal-arrow left"
+            className="modal-arrow modal-arrow-left"
             onClick={(e) => {
               e.stopPropagation();
               prevImage();
             }}
+            aria-label="Prethodna slika"
           >
             ←
           </button>
 
-          <img
-            src={images[selectedIndex]}
-            alt="Ragdoll fullscreen"
-            className="modal-image"
-            onClick={(e) => e.stopPropagation()}
-          />
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={selectedKitten.fullImage}
+              alt="Ragdoll mačić"
+              className="modal-image"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
 
           <button
-            className="modal-arrow right"
+            className="modal-arrow modal-arrow-right"
             onClick={(e) => {
               e.stopPropagation();
               nextImage();
             }}
+            aria-label="Sljedeća slika"
           >
             →
           </button>
-
         </div>
       )}
     </section>

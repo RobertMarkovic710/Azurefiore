@@ -1,4 +1,5 @@
 import "./App.css";
+import Navbar from "./components/navbar/Navbar";
 import Hero from "./pageComponents/hero/Hero";
 import About from "./pageComponents/about/About";
 import Gallery from "./pageComponents/gallery/Gallery";
@@ -10,6 +11,7 @@ import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 function App() {
   return (
     <>
+      <Navbar />
       <Hero />
       <Reviews />
       <Gallery />

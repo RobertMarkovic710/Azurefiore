@@ -1,71 +1,108 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    :root {
+        --azure-deep: #001f3f;
+        --azure-primary: #002e5d;
+        --azure-accent: #4da3ff;
+        --azure-soft: #e8f1fc;
+        --text-dark: #172033;
+        --text-muted: #5c6678;
+        --section-padding: clamp(72px, 8vw, 110px);
 
-@font-face {
-    font-family: "GoogleSans";
-    src: url("/fonts/Google_Sans/GoogleSans-VariableFont_GRAD,opsz,wght.ttf") format("truetype");
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-}
-
-html, body {
-    font-family: "GoogleSans", sans-serif;
-    font-weight: 400;
-    scroll-behavior: smooth;
-    margin: 0;
-}
-
-h1,h2,h3 {
-    font-weight: 600;
-}
-
-@media (max-width: 1024px) {
-
-    .main-title-1 { font-size: 3rem; }
-    .main-title-2 { font-size: 2rem; }
-
-    .about-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .main-title-1 {
-        font-size: 2.2rem;
+        --nav-height: 78px;
+        --nav-height-mobile: 66px;
     }
 
-    .main-title-2 {
-        font-size: 1.6rem;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-    .card-list {
-        flex-direction: column;
-        align-items: center;
+    @font-face {
+        font-family: "GoogleSans";
+        src: url("/fonts/Google_Sans/GoogleSans.ttf") format("truetype");
+        font-weight: 100 900;
+        font-style: normal;
+        font-display: swap;
     }
 
-    .card {
-        width: 80%;
-        max-width: 300px;
+    html {
+        scroll-behavior: smooth;
     }
 
-    .about-text h2 {
-        font-size: 1.6rem;
+    html,
+    body {
+        width: 100%;
+        min-height: 100%;
+        overflow-x: hidden;
+
+        font-family: "GoogleSans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-weight: 400;
+        color: var(--text-dark);
+
+        background: #ffffff;
     }
-}
 
-@media (max-width: 480px) {
-
-    .main-title-1 { font-size: 1.8rem; }
-    .main-title-2 { font-size: 1.2rem; }
-
-    .card { width: 95%; }
-
-    .contact-form {
-        padding: 20px;
+    body {
+        margin: 0;
     }
-}
+
+    img,
+    picture,
+    svg {
+        max-width: 100%;
+    }
+
+    button,
+    input,
+    textarea {
+        font: inherit;
+    }
+
+    button,
+    a {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    section[id] {
+        scroll-margin-top: calc(var(--nav-height) + 8px);
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-weight: 700;
+    }
+
+    p {
+        text-wrap: pretty;
+    }
+
+    @media (max-width: 1024px) {
+        :root {
+            --section-padding: clamp(64px, 8vw, 90px);
+        }
+
+        section[id] {
+            scroll-margin-top: calc(var(--nav-height) + 6px);
+        }
+    }
+
+    @media (max-width: 768px) {
+        :root {
+            --section-padding: 64px;
+        }
+
+        section[id] {
+            scroll-margin-top: calc(var(--nav-height-mobile) + 8px);
+        }
+    }
+
+    @media (max-width: 480px) {
+        :root {
+            --section-padding: 54px;
+        }
+
+        section[id] {
+            scroll-margin-top: calc(var(--nav-height-mobile) + 6px);
+        }
+    }
