@@ -4,8 +4,6 @@ import betty_img from "../assets/reviews/betty.jpeg"
 import aria_img from "../assets/reviews/aria.jpeg"
 import edgar_img from "../assets/reviews/edgar.jpeg";
 
-import demo_img from "../assets/reviews/demo.jpg"
-
 export const reviews = [
     {
         name: "Balto",
