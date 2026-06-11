@@ -19,7 +19,7 @@ export default function Reviews() {
                 </p>
 
                 <p className="reviews-swipe-hint">
-                    Povucite u stranu za više iskustava
+                    Povucite u stranu za više recenzija
                 </p>
             </div>
 
