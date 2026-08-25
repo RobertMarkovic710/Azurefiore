@@ -298,7 +298,7 @@ export default async function handler(req, res) {
                                             color: #4f5b6d;
                                             font-size: 15px;
                                         ">
-                                            hvala vam što ste kontaktirali
+                                            hvala što ste kontaktirali
                                             <strong style="color: #002e5d;">
                                                 Azurefiore
                                             </strong>.
