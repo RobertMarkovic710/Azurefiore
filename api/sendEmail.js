@@ -11,32 +11,16 @@ function escapeHtml(value = "") {
 
 export default async function handler(req, res) {
     if (req.method !== "POST") {
-        return res.status(405).json({
-            message: "Method not allowed"
-        });
+        return res.status(405).json({ message: "Method not allowed" });
     }
 
     const { name, place, phone, email, message } = req.body;
 
-    if (!name || !place || !email || !message) {
-        return res.status(400).json({
-            error: "Nedostaju obavezni podaci."
-        });
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailRegex.test(email)) {
-        return res.status(400).json({
-            error: "Neispravna email adresa."
-        });
-    }
-
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: process.env.GMAIL_USER,
-            pass: process.env.GMAIL_APP_PASSWORD,
+            user: "azurefiore.ragdoll@gmail.com",
+            pass: "dllwjgxoiupqjsza",
         },
     });
 
@@ -48,23 +32,10 @@ export default async function handler(req, res) {
 
     try {
         await transporter.sendMail({
-            from: `"Azurefiore kontakt" <${process.env.GMAIL_USER}>`,
-            to: process.env.GMAIL_USER,
+            from: `"Azurefiore kontakt" <azurefiore.ragdoll@gmail.com>`,
+            to: "azurefiore.ragdoll@gmail.com",
             replyTo: email,
             subject: `Novi upit s web stranice - ${name}`,
-
-            text: `
-Novi upit s Azurefiore web stranice
-
-Ime i prezime: ${name}
-Mjesto: ${place}
-Telefon: ${phone || "Nije navedeno"}
-Email: ${email}
-
-Poruka:
-${message}
-            `,
-
             html: `
                 <!DOCTYPE html>
                 <html lang="hr">
@@ -79,13 +50,11 @@ ${message}
                         font-family: Arial, Helvetica, sans-serif;
                         color: #172033;
                     ">
-
                         <div style="
                             width: 100%;
                             padding: 35px 15px;
                             box-sizing: border-box;
                         ">
-
                             <div style="
                                 max-width: 650px;
                                 margin: 0 auto;
@@ -94,7 +63,6 @@ ${message}
                                 overflow: hidden;
                                 box-shadow: 0 15px 40px rgba(0, 46, 93, 0.10);
                             ">
-
                                 <div style="
                                     background-color: #002e5d;
                                     padding: 30px;
@@ -121,7 +89,6 @@ ${message}
                                     padding: 32px;
                                     line-height: 1.6;
                                 ">
-
                                     <h2 style="
                                         margin: 0 0 25px;
                                         color: #002e5d;
@@ -212,7 +179,6 @@ ${message}
                                         border-left: 4px solid #2774ae;
                                         border-radius: 10px;
                                     ">
-
                                         <div style="
                                             margin-bottom: 10px;
                                             color: #002e5d;
@@ -236,15 +202,11 @@ ${message}
                                         color: #7a8798;
                                         font-size: 13px;
                                     ">
-                                        Kliknite Reply / Odgovori kako biste
-                                        odgovorili direktno osobi koja je
-                                        poslala ovaj upit.
+                                        Kliknite Reply / Odgovori kako biste odgovorili direktno osobi koja je poslala ovaj upit.
                                     </p>
-
                                 </div>
                             </div>
                         </div>
-
                     </body>
                 </html>
             `,
@@ -252,29 +214,10 @@ ${message}
 
         try {
             await transporter.sendMail({
-                from: `"Azurefiore" <${process.env.GMAIL_USER}>`,
+                from: `"Azurefiore" <azurefiore.ragdoll@gmail.com>`,
                 to: email,
-                replyTo: process.env.GMAIL_USER,
-                subject: "Zaprimili smo vaš upit | Azurefiore",
-
-                text: `
-Pozdrav ${name},
-
-hvala Vam što ste kontaktirali Azurefiore.
-
-Vaš upit smo uspješno zaprimili i odgovorit ćemo u najkraćem mogućem roku.
-
-Vaša poruka:
-${message}
-
-Hvala!
-
-Azurefiore
-Uzgajivačnica Ragdoll mačaka
-Osijek, Hrvatska
-https://www.azurefiore.com
-                `,
-
+                replyTo: "azurefiore.ragdoll@gmail.com",
+                subject: "Zaprimili smo Vaš upit | Azurefiore",
                 html: `
                     <!DOCTYPE html>
                     <html lang="hr">
@@ -290,13 +233,11 @@ https://www.azurefiore.com
                             font-family: Arial, Helvetica, sans-serif;
                             color: #172033;
                         ">
-
                             <div style="
                                 width: 100%;
                                 padding: 40px 15px;
                                 box-sizing: border-box;
                             ">
-
                                 <div style="
                                     max-width: 620px;
                                     margin: 0 auto;
@@ -305,13 +246,11 @@ https://www.azurefiore.com
                                     overflow: hidden;
                                     box-shadow: 0 15px 40px rgba(0, 46, 93, 0.10);
                                 ">
-
                                     <div style="
                                         background-color: #002e5d;
                                         padding: 40px 30px;
                                         text-align: center;
                                     ">
-
                                         <div style="
                                             color: #ffffff;
                                             font-size: 32px;
@@ -331,14 +270,12 @@ https://www.azurefiore.com
                                             <br>
                                             Osijek, Hrvatska
                                         </div>
-
                                     </div>
 
                                     <div style="
                                         padding: 38px 35px;
                                         line-height: 1.7;
                                     ">
-
                                         <h2 style="
                                             margin: 0 0 24px;
                                             color: #002e5d;
@@ -386,7 +323,6 @@ https://www.azurefiore.com
                                             border-left: 4px solid #2774ae;
                                             border-radius: 12px;
                                         ">
-
                                             <div style="
                                                 margin-bottom: 10px;
                                                 color: #002e5d;
@@ -405,7 +341,6 @@ https://www.azurefiore.com
                                             ">
                                                 ${safeMessage}
                                             </div>
-
                                         </div>
 
                                         <p style="
@@ -413,22 +348,18 @@ https://www.azurefiore.com
                                             color: #4f5b6d;
                                             font-size: 15px;
                                         ">
-                                            Ako želite nešto nadopuniti u svom
-                                            upitu, slobodno odgovorite direktno
-                                            na ovaj e-mail.
+                                            Ako želite nešto nadopuniti u svom upitu,
+                                            slobodno odgovorite direktno na ovaj e-mail.
                                         </p>
 
-                                        <div style="
-                                            padding-top: 5px;
-                                        ">
-
+                                        <div style="padding-top: 5px;">
                                             <p style="
                                                 margin: 0;
                                                 color: #4f5b6d;
                                                 font-size: 15px;
                                                 line-height: 1.7;
                                             ">
-                                                Srdačan pozdrav,
+                                                Ugodan pozdrav,
                                                 <br>
 
                                                 <strong style="
@@ -445,9 +376,7 @@ https://www.azurefiore.com
 
                                                 Osijek, Hrvatska
                                             </p>
-
                                         </div>
-
                                     </div>
 
                                     <div style="
@@ -456,7 +385,6 @@ https://www.azurefiore.com
                                         border-top: 1px solid #e1eaf2;
                                         text-align: center;
                                     ">
-
                                         <a
                                             href="https://www.azurefiore.com"
                                             style="
@@ -475,39 +403,23 @@ https://www.azurefiore.com
                                             font-size: 11px;
                                             line-height: 1.6;
                                         ">
-                                            Ovaj e-mail automatski je poslan
-                                            kao potvrda primitka vašeg upita
-                                            putem Azurefiore web stranice.
+                                            Ovaj e-mail automatski je poslan kao potvrda primitka Vašeg upita putem Azurefiore web stranice.
                                         </p>
-
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </body>
                     </html>
                 `,
             });
-
         } catch (autoReplyError) {
-            console.error(
-                "Greška pri slanju automatske potvrde:",
-                autoReplyError
-            );
+            console.error("Greška pri slanju automatske potvrde:", autoReplyError);
         }
 
-        return res.status(200).json({
-            success: true
-        });
+        return res.status(200).json({ success: true });
 
     } catch (error) {
-        console.error(
-            "Greška pri slanju kontaktnog upita:",
-            error
-        );
-
+        console.error(error);
         return res.status(500).json({
             error: "Greška pri slanju emaila"
         });
